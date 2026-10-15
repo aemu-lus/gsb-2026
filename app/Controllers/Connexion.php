@@ -49,13 +49,14 @@ class Connexion extends BaseController
         $login = $this->request->getPost('txtLogin');
         $mdp = $this->request->getPost('pwdMdp');
 
-        $visiteur = $this->gsb_model->get_infos_visiteur($login, $mdp);
+        $utilisateur = $this->gsb_model->get_infos_utilisateur($login, $mdp);
 
-        if ($visiteur) {
+        if ($utilisateur) {
             session()->set([
-                'idvisiteur' => $visiteur['idvisiteur'],
-                'nom' => $visiteur['nom'],
-                'prenom' => $visiteur['prenom'],
+                'idvisiteur' => $utilisateur['idUtilisateur'],
+                'nom' => $utilisateur['nom'],
+                'prenom' => $utilisateur['prenom'],
+                'role' => $utilisateur['role'],
                 'isLoggedIn' => true
             ]);
             return redirect()->to('/accueil');
@@ -69,7 +70,7 @@ class Connexion extends BaseController
      */
     public function deconnexion()
     {
-        session()->remove(['idvisiteur', 'nom', 'prenom', 'isLoggedIn']);
+        session()->remove(['idvisiteur', 'nom', 'prenom', 'role', 'isLoggedIn']);
         return redirect()->to('/')->with('infos', 'Vous avez bien été déconnecté.');
     }
 
