@@ -70,7 +70,7 @@ class Connexion extends BaseController
      */
     public function deconnexion()
     {
-        session()->remove(['idvisiteur', 'nom', 'prenom', 'role', 'isLoggedIn']);
+        session()->remove(['idUtilisateur', 'nom', 'prenom', 'role', 'isLoggedIn']);
         return redirect()->to('/')->with('infos', 'Vous avez bien été déconnecté.');
     }
 
