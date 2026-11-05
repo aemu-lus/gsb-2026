@@ -18,13 +18,11 @@
 
     <ul id="menuPrincipal" class="menuList">
         <li>
-            <?= anchor('Accueil', 'Accueil', ['title' => 'Accueil']) ?>
-        </li>
-        <li>
-            <?= anchor('Gererfrais', 'Saisie fiche de frais', ['title' => 'Saisie fiche de frais']) ?>
-        </li>
-        <li>
-            <?= anchor('Etatfrais', 'Mes fiches de frais', ['title' => 'Consultation de mes fiches de frais']) ?>
+            <?php foreach ($menuItems as $item): ?>
+                <a href="<?= base_url($item["usecase"]) ?>" title="<?= esc($item['texte']) ?>">
+                   
+                </a>
+            <?php endforeach; ?>
         </li>
     </ul>
 </div>
