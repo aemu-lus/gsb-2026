@@ -18,11 +18,9 @@
 
     <ul id="menuPrincipal" class="menuList">
         <li>
-            <?php foreach ($menuItems as $item): ?>
-                <a href="<?= base_url($item["usecase"]) ?>" title="<?= esc($item['texte']) ?>">
-                   
-                </a>
-            <?php endforeach; ?>
+            <?php foreach ($menuItems as $item): 
+                echo anchor($item["usecase"], $item['texte'], ['title' => esc($item['titre'])]) ;
+             endforeach; ?>
         </li>
     </ul>
 </div>
