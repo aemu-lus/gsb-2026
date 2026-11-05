@@ -2,10 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Gsb_lib;
+
 class Accueil extends BaseController
 {
+    protected Gsb_lib $gsb_lib;
     public function __construct()
     {
+        $this->gsb_lib = new Gsb_lib();
         // On charge le helper URL et HTML
         helper(['url', 'html']);
     }
@@ -45,9 +49,13 @@ class Accueil extends BaseController
             $i++;
         }
 
+        $menusItems = $this->gsb_lib->getMenus("");
+
+
         $data = [
             'titre' => "Bienvenue sur l'intranet GSB",
-            'rss' => $tableau
+            'rss' => $tableau,
+            'menuItems' => $menusItems
         ];
 
 
