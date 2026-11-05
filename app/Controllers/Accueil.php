@@ -47,7 +47,9 @@ class Accueil extends BaseController
 
         $data = [
             'titre' => "Bienvenue sur l'intranet GSB",
-            'rss' => $tableau
+            'rss' => $tableau,
+            'menuItems' => 
+            
         ];
 
 

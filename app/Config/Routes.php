@@ -10,7 +10,7 @@ $routes->get('connexion', 'Connexion::login');
 $routes->post('/connexion/valider', 'Connexion::valider');  
 $routes->get('/connexion/deconnexion', 'Connexion::deconnexion');  
 
-$routes->get('/Accueil', 'Accueil::index');  
+$routes->get('/accueil', 'accueil::index');  
 
 $routes->get('Gererfrais', 'Gererfrais::index');
 $routes->post('Gererfrais/maj_fraisforfait', 'Gererfrais::valider_maj_fraisforfait');
