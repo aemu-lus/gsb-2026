@@ -17,10 +17,12 @@
     </div>  
 
     <ul id="menuPrincipal" class="menuList">
+        <?php foreach ($menuItems as $item): ?>
         <li>
-            <?php foreach ($menuItems as $item): 
-                echo anchor($item["usecase"], $item['texte'], ['title' => esc($item['titre'])]) ;
-             endforeach; ?>
+            
+                <?= anchor($item["usecase"], $item['texte'], ['title' => esc($item['titre'])]); ?>
+             
         </li>
+        <?php endforeach; ?>
     </ul>
 </div>
