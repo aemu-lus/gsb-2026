@@ -69,5 +69,9 @@ class Gsb_lib
     {
         return number_format($montant, 2, ',', ' ');
     }
-
+    function get_menus(string $idRole){
+        $menus = [
+            // usecase 
+        ];
+    }
 }
