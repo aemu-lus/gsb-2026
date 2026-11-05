@@ -18,13 +18,13 @@
 
     <ul id="menuPrincipal" class="menuList">
         <li>
-            <?= anchor('accueil', 'Accueil', ['title' => 'Accueil']) ?>
+            <?= anchor('Accueil', 'Accueil', ['title' => 'Accueil']) ?>
         </li>
         <li>
-            <?= anchor('gererfrais', 'Saisie fiche de frais', ['title' => 'Saisie fiche de frais']) ?>
+            <?= anchor('Gererfrais', 'Saisie fiche de frais', ['title' => 'Saisie fiche de frais']) ?>
         </li>
         <li>
-            <?= anchor('etatfrais', 'Mes fiches de frais', ['title' => 'Consultation de mes fiches de frais']) ?>
+            <?= anchor('Etatfrais', 'Mes fiches de frais', ['title' => 'Consultation de mes fiches de frais']) ?>
         </li>
     </ul>
 </div>
