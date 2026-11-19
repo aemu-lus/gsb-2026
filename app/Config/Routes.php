@@ -5,10 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Connexion::login'); 
+$routes->get('/', 'Connexion::login');
 $routes->get('connexion', 'Connexion::login');
-$routes->post('/connexion/valider', 'Connexion::valider');  
-$routes->get('/connexion/deconnexion', 'Connexion::deconnexion');  
+$routes->post('/connexion/valider', 'Connexion::valider');
+$routes->get('/connexion/deconnexion', 'Connexion::deconnexion'); 
 
 $routes->get('/Accueil', 'Accueil::index');  
 
