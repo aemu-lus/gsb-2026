@@ -17,12 +17,14 @@
     </div>  
 
     <ul id="menuPrincipal" class="menuList">
-        <?php foreach ($menuItems as $item): ?>
         <li>
-            
-                <?= anchor($item["usecase"], $item['texte'], ['title' => esc($item['titre'])]); ?>
-             
+            <?= anchor('Accueil', 'Accueil', ['title' => 'Accueil']) ?>
         </li>
-        <?php endforeach; ?>
+        <li>
+            <?= anchor('Gererfrais', 'Saisie fiche de frais', ['title' => 'Saisie fiche de frais']) ?>
+        </li>
+        <li>
+            <?= anchor('Etatfrais', 'Mes fiches de frais', ['title' => 'Consultation de mes fiches de frais']) ?>
+        </li>
     </ul>
 </div>
