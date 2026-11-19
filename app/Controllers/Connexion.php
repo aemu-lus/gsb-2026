@@ -59,7 +59,7 @@ class Connexion extends BaseController
                 'role' => $utilisateur['libelle'],
                 'isLoggedIn' => true
             ]);
-            return redirect()->to('/accueil');
+            return redirect()->to('/Accueil');
         }
 
         return redirect()->back()->withInput()->with('erreurs', 'Login ou mot de passe incorrect');
