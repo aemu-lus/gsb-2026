@@ -69,13 +69,9 @@ class Gsb_lib
     {
         return number_format($montant, 2, ',', ' ');
     }
-
-    function getMenus(string $idRole): array
-    {  
-    return [
-                ["usecase" => "Accueil", "texte" => "Accueil", "titre" => "Accueil"],
-                ["usecase" => "GererFrais", "texte" => "Saisie fiche de frais", "titre" => "Saisie fiche de frais"],
-                ["usecase" => "Etatfrais", "texte" => "Mes fiches de frais", "titre" => "Mes fiches de frais"]
-            ];
+    function get_menus(string $idRole){
+        $menus = [
+            // usecase 
+        ];
     }
 }
