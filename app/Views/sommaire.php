@@ -17,6 +17,7 @@
     </div>  
 
     <ul id="menuPrincipal" class="menuList">
+        <?php if ($session->get('role') == 'Visiteur'): ?>
         <li>
             <?= anchor('Accueil', 'Accueil', ['title' => 'Accueil']) ?>
         </li>
@@ -26,5 +27,16 @@
         <li>
             <?= anchor('Etatfrais', 'Mes fiches de frais', ['title' => 'Consultation de mes fiches de frais']) ?>
         </li>
+        <?php else: ?>
+        <li>
+            <?= anchor('Accueil', 'Accueil', ['title' => 'Accueil']) ?>
+        </li>
+        <li>
+            <?= anchor('Validerfrais', 'Valider les fiches de frais', ['title' => 'Valider les fiches de frais']) ?>
+        </li>
+        <li>
+            <?= anchor('Remboursement', 'Remboursements', ['title' => 'Gestion des remboursements']) ?>
+        </li>
+        <?php endif; ?>
     </ul>
 </div>
