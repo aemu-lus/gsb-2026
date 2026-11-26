@@ -8,9 +8,9 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Connexion::login');
 $routes->get('connexion', 'Connexion::login');
 $routes->post('/connexion/valider', 'Connexion::valider');
-$routes->get('/connexion/deconnexion', 'Connexion::deconnexion'); 
+$routes->get('/connexion/deconnexion', 'Connexion::deconnexion');
 
-$routes->get('/Accueil', 'Accueil::index');  
+$routes->get('/Accueil', 'Accueil::index');
 
 $routes->get('Gererfrais', 'Gererfrais::index');
 $routes->post('Gererfrais/maj_fraisforfait', 'Gererfrais::valider_maj_fraisforfait');
@@ -20,5 +20,6 @@ $routes->get('Gererfrais/supp_fraishorsforfait/(:num)', 'Gererfrais::supprimer_f
 $routes->get('Etatfrais', 'Etatfrais::index');
 $routes->post('Etatfrais/mois', 'Etatfrais::selectionner_mois');
 
-$routes->get('Rembourserfrais', 'Rembourserfrais::index');
-$routes->post('Rembourserfrais/mois', 'Rembourserfrais::fiche_frais');
+$routes->get('Rembourserfiches', 'Rembourserfiches::index');
+$routes->get('Rembourserfrais/(:segment)', 'Rembourserfrais::index/$1');
+$routes->post('Rembourserfrais/valider/(:segment)', 'Rembourserfrais::rembourser/$1');

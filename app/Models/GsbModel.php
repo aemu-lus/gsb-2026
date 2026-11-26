@@ -61,15 +61,30 @@ class GsbModel extends Model
             ->get()
             ->getRowArray();
     }
-    public function get_les_infos_by_etat($idEtat)
+    
+    /** Retourne les informations des fiches de frais selon leur état */
+    public function get_les_infos_by_etat(string $idEtat): array
     {
-        $row = $this->db->table('fichefrais')
-            ->select('fichefrais.idFiche, fichefrais.dateModif, fichefrais.montantValide, CONCAT(utilisateur.nom, " ", utilisateur.prenom) AS nomComplet')
+        return $this->db->table('fichefrais')
+            ->select([
+                'fichefrais.idFiche',
+                'fichefrais.idEtat',
+                'fichefrais.mois',
+                'fichefrais.annee',
+                'fichefrais.montantValide',
+                'fichefrais.dateModif',
+                'utilisateur.idUtilisateur',
+                'utilisateur.nom',
+                'utilisateur.prenom',
+                'CONCAT(utilisateur.prenom, " ", utilisateur.nom) AS nomComplet',
+            ])
             ->join('utilisateur', 'fichefrais.idVisiteur = utilisateur.idUtilisateur')
             ->where('fichefrais.idEtat', $idEtat)
+            ->orderBy('fichefrais.annee', 'DESC')
+            ->orderBy('fichefrais.mois', 'DESC')
+            ->orderBy('utilisateur.nom', 'ASC')
             ->get()
             ->getResultArray();
-        return $row;
     }
 
     /** Frais forfait pour un mois */

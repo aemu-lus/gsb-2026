@@ -1,9 +1,27 @@
-<table class="table table-striped">
-  <?php foreach ($remboursements as $remboursement): ?>
+<table class="listeLegere">
     <tr>
-      <td><?= esc($remboursement['date']) ?></td>
-      <td><?= esc($remboursement['nom']) ?></td>
-      <td><?= esc($remboursement['montant']) ?></td>
+        <th>Date</th>
+        <th>Visiteur</th>
+        <th>Montant</th>
     </tr>
-  <?php endforeach; ?>
+
+    <?php foreach ($fiches as $fiche): ?>
+        <tr>
+            <td>
+                <a href="<?= site_url('Rembourserfrais/' . $fiche['idFiche']) ?>">
+                    <?= esc($fiche['dateModifFr']) ?>
+                </a>
+            </td>
+            <td>
+                <a href="<?= site_url('Rembourserfrais/' . $fiche['idFiche']) ?>">
+                    <?= esc($fiche['nomComplet']) ?>
+                </a>
+            </td>
+            <td>
+                <a href="<?= site_url('Rembourserfrais/' . $fiche['idFiche']) ?>">
+                    <?= esc($fiche['montantFormate']) ?> &#8364;
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
 </table>
