@@ -17,7 +17,7 @@
     </div>  
 
     <ul id="menuPrincipal" class="menuList">
-        <?php if ($session->get('role') == 'Visiteur'): ?>
+        <?php if ($session->get('role') == 'Visiteur Médical'): ?>
         <li>
             <?= anchor('Accueil', 'Accueil', ['title' => 'Accueil']) ?>
         </li>
