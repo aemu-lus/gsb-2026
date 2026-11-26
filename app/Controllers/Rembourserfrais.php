@@ -57,7 +57,7 @@ class Rembourserfrais extends BaseController
         echo view('sommaire');
         echo view('structures/contenu_entete', $data);
         echo view('structures/souscontenu_entete', $data);
-        echo view('etat_fiche', $data);
+        echo view('valider_remboursement', $data);
         echo view('fraisforfait_table', $data);
         echo view('fraishorsforfait_table', $data);
         echo view('structures/souscontenu_pied');
