@@ -19,3 +19,6 @@ $routes->get('Gererfrais/supp_fraishorsforfait/(:num)', 'Gererfrais::supprimer_f
 
 $routes->get('Etatfrais', 'Etatfrais::index');
 $routes->post('Etatfrais/mois', 'Etatfrais::selectionner_mois');
+
+$routes->get('Rembourserfrais', 'Rembourserfrais::index');
+$routes->post('Rembourserfrais/mois', 'Rembourserfrais::fiche_frais');
