@@ -70,7 +70,7 @@ class Etatfrais extends BaseController
             }
             $data['lst_contenu'] = $options;
             $data['lst_select'] = $this->annee_mois;
-            $data['lst_action'] = 'etatfrais/mois';
+            $data['lst_action'] = 'Etatfrais/mois';
             $data['lst_id'] = 'lstMois';
             $data['lst_label'] = 'Mois';
             $data['sc_titre'] = 'Mois à sélectionner :';
